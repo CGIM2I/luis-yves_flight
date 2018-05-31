@@ -28,7 +28,7 @@ public class ClientDAO implements IClientDAO {
 
 	@Override
 	public void updateClient(Client c) {
-		// TODO Auto-generated method stub
+		entityManager.merge(c);
 
 	}
 
@@ -37,6 +37,12 @@ public class ClientDAO implements IClientDAO {
 		System.out.println("Méthode : deleteClient");
 		Client c = entityManager.find(Client.class, id);
 		entityManager.remove(c);
+	}
+
+	@Override
+	public void getClients() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
