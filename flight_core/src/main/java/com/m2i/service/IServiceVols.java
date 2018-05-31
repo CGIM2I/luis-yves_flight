@@ -1,11 +1,11 @@
-package com.m2i.dao;
+package com.m2i.service;
 
 import java.util.Date;
 
 import com.m2i.entity.Ville;
 import com.m2i.entity.Vol;
 
-public interface IDaoServiceVols {
+public interface IServiceVols {
 	public void rechercherVolsAuDepart(Ville villeDepart, Date dateDepart);
 	public void rechercherVolsEntre(Ville villeDepart,Ville villeArrive);
 	public void rechercherVolParNumero(Long numero);
