@@ -20,7 +20,7 @@ public class TestVol {
 	public void testVolsDepartArrive() {
 		List <Vol> vols = daoVol.findAll();
 		for (Vol vol : vols) {
-			System.out.println(vol.toString());
+			System.out.println("vols :"+vol.toString());
 		}
 	}
 

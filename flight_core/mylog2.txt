@@ -338,3 +338,90 @@
 2018-05-31 16:02:48,791 DEBUG main org.hibernate.SQL - )
 2018-05-31 16:02:48,792 DEBUG main org.hibernate.SQL - )
 >>>>>>> 57e0d24652e043f4df078d65261f471a771f0524
+2018-05-31 16:12:17,525 DEBUG main org.hibernate.SQL - alter table Login drop foreign key FKcifyh7m710n4epdqn1qbiwqgr
+2018-05-31 16:12:17,536 DEBUG main org.hibernate.SQL - alter table Vol drop foreign key FKfyats76ha60524dxdbsx441kg
+2018-05-31 16:12:17,537 DEBUG main org.hibernate.SQL - alter table Vol drop foreign key FK8ycbrr9dx90p0qrnn3q60kqp
+2018-05-31 16:12:17,537 DEBUG main org.hibernate.SQL - drop table if exists hibernate_sequence
+2018-05-31 16:12:17,540 DEBUG main org.hibernate.SQL - drop table if exists Localite
+2018-05-31 16:12:17,542 DEBUG main org.hibernate.SQL - drop table if exists Login
+2018-05-31 16:12:17,545 DEBUG main org.hibernate.SQL - drop table if exists Personne
+2018-05-31 16:12:17,547 DEBUG main org.hibernate.SQL - drop table if exists Vol
+2018-05-31 16:12:17,552 DEBUG main org.hibernate.SQL - create table hibernate_sequence (next_val bigint) engine=InnoDB
+2018-05-31 16:12:17,591 DEBUG main org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+2018-05-31 16:12:17,598 DEBUG main org.hibernate.SQL - create table Localite (id bigint not null auto_increment, aeroport varchar(255), ville varchar(255), primary key (id)) engine=InnoDB
+2018-05-31 16:12:17,647 DEBUG main org.hibernate.SQL - create table Login (id bigint not null auto_increment, password varchar(255), username varchar(255), client_id bigint, primary key (id)) engine=InnoDB
+2018-05-31 16:12:17,680 DEBUG main org.hibernate.SQL - create table Personne (typePersonne varchar(31) not null, id bigint not null, email varchar(255), nom varchar(255), prenom varchar(255), telephone varchar(255), codePostal varchar(255), numEtRue varchar(255), pays varchar(255), ville varchar(255), primary key (id)) engine=InnoDB
+2018-05-31 16:12:17,713 DEBUG main org.hibernate.SQL - create table Vol (num bigint not null auto_increment, dateArrivee date, dateDepart date, prix double precision, refLocArrivee bigint, refLocDepart bigint, primary key (num)) engine=InnoDB
+2018-05-31 16:12:17,743 DEBUG main org.hibernate.SQL - alter table Login add constraint FKcifyh7m710n4epdqn1qbiwqgr foreign key (client_id) references Personne (id)
+2018-05-31 16:12:17,813 DEBUG main org.hibernate.SQL - alter table Vol add constraint FKfyats76ha60524dxdbsx441kg foreign key (refLocArrivee) references Localite (id)
+2018-05-31 16:12:17,872 DEBUG main org.hibernate.SQL - alter table Vol add constraint FK8ycbrr9dx90p0qrnn3q60kqp foreign key (refLocDepart) references Localite (id)
+2018-05-31 16:12:17,918 DEBUG main org.hibernate.SQL - <<<<<<< HEAD
+2018-05-31 16:12:17,919 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 1 , 'Paris' , 'Paris-Orly' )
+2018-05-31 16:12:17,922 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 2 , 'Paris' , 'Paris-Roissy' )
+2018-05-31 16:12:17,924 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 3 , 'Toulouse' , 'Toulouse-Blagnac' )
+2018-05-31 16:12:17,927 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 4 , 'Nice' , 'Nice-' )
+2018-05-31 16:12:17,931 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 1 , 100.0 , 1 ,  '2017-09-20 18:10:00' , 3 , '2017-09-20 19:30:00' )
+2018-05-31 16:12:17,931 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 2 , 110.0 , 3 ,  '2017-09-20 08:10:00' , 1 , '2017-09-20 09:20:00' )
+2018-05-31 16:12:17,931 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 3 , 80.0  , 1 ,  '2018-09-20 12:20:00' , 4 , '2018-09-20 13:30:00' )
+2018-05-31 16:12:17,932 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 4 , 70.0  , 4 ,  '2018-09-20 20:30:00' , 1 , '2018-09-20 21:15:00' )
+2018-05-31 16:12:17,932 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 1, 'yvessav@free.fr', 'savang', 'yves', '0145253573', '75007', '8 villa de Ségur', 'France', 'Paris')
+2018-05-31 16:12:17,935 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 2, 'babel@free.fr', 'joris', 'boris', '0620020630', '89255', '19 rue de la Perche', 'France', 'Perpete')
+2018-05-31 16:12:18,232 DEBUG main org.hibernate.SQL - select vol0_.num as num1_3_, vol0_.dateArrivee as dateArri2_3_, vol0_.refLocArrivee as refLocAr5_3_, vol0_.dateDepart as dateDepa3_3_, vol0_.refLocDepart as refLocDe6_3_, vol0_.prix as prix4_3_ from Vol vol0_
+2018-05-31 16:13:45,644 DEBUG main org.hibernate.SQL - alter table Login drop foreign key FKcifyh7m710n4epdqn1qbiwqgr
+2018-05-31 16:13:45,666 DEBUG main org.hibernate.SQL - alter table Vol drop foreign key FKfyats76ha60524dxdbsx441kg
+2018-05-31 16:13:45,674 DEBUG main org.hibernate.SQL - alter table Vol drop foreign key FK8ycbrr9dx90p0qrnn3q60kqp
+2018-05-31 16:13:45,681 DEBUG main org.hibernate.SQL - drop table if exists hibernate_sequence
+2018-05-31 16:13:45,698 DEBUG main org.hibernate.SQL - drop table if exists Localite
+2018-05-31 16:13:45,712 DEBUG main org.hibernate.SQL - drop table if exists Login
+2018-05-31 16:13:45,725 DEBUG main org.hibernate.SQL - drop table if exists Personne
+2018-05-31 16:13:45,738 DEBUG main org.hibernate.SQL - drop table if exists Vol
+2018-05-31 16:13:45,755 DEBUG main org.hibernate.SQL - create table hibernate_sequence (next_val bigint) engine=InnoDB
+2018-05-31 16:13:45,787 DEBUG main org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+2018-05-31 16:13:45,791 DEBUG main org.hibernate.SQL - create table Localite (id bigint not null auto_increment, aeroport varchar(255), ville varchar(255), primary key (id)) engine=InnoDB
+2018-05-31 16:13:45,824 DEBUG main org.hibernate.SQL - create table Login (id bigint not null auto_increment, password varchar(255), username varchar(255), client_id bigint, primary key (id)) engine=InnoDB
+2018-05-31 16:13:45,849 DEBUG main org.hibernate.SQL - create table Personne (typePersonne varchar(31) not null, id bigint not null, email varchar(255), nom varchar(255), prenom varchar(255), telephone varchar(255), codePostal varchar(255), numEtRue varchar(255), pays varchar(255), ville varchar(255), primary key (id)) engine=InnoDB
+2018-05-31 16:13:45,880 DEBUG main org.hibernate.SQL - create table Vol (num bigint not null auto_increment, dateArrivee date, dateDepart date, prix double precision, refLocArrivee bigint, refLocDepart bigint, primary key (num)) engine=InnoDB
+2018-05-31 16:13:45,909 DEBUG main org.hibernate.SQL - alter table Login add constraint FKcifyh7m710n4epdqn1qbiwqgr foreign key (client_id) references Personne (id)
+2018-05-31 16:13:45,968 DEBUG main org.hibernate.SQL - alter table Vol add constraint FKfyats76ha60524dxdbsx441kg foreign key (refLocArrivee) references Localite (id)
+2018-05-31 16:13:46,042 DEBUG main org.hibernate.SQL - alter table Vol add constraint FK8ycbrr9dx90p0qrnn3q60kqp foreign key (refLocDepart) references Localite (id)
+2018-05-31 16:13:46,098 DEBUG main org.hibernate.SQL - <<<<<<< HEAD
+2018-05-31 16:13:46,099 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 1 , 'Paris' , 'Paris-Orly' )
+2018-05-31 16:13:46,101 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 2 , 'Paris' , 'Paris-Roissy' )
+2018-05-31 16:13:46,105 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 3 , 'Toulouse' , 'Toulouse-Blagnac' )
+2018-05-31 16:13:46,107 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 4 , 'Nice' , 'Nice-' )
+2018-05-31 16:13:46,109 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 1 , 100.0 , 1 ,  '2017-09-20 18:10:00' , 3 , '2017-09-20 19:30:00' )
+2018-05-31 16:13:46,110 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 2 , 110.0 , 3 ,  '2017-09-20 08:10:00' , 1 , '2017-09-20 09:20:00' )
+2018-05-31 16:13:46,110 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 3 , 80.0  , 1 ,  '2018-09-20 12:20:00' , 4 , '2018-09-20 13:30:00' )
+2018-05-31 16:13:46,110 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 4 , 70.0  , 4 ,  '2018-09-20 20:30:00' , 1 , '2018-09-20 21:15:00' )
+2018-05-31 16:13:46,110 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 1, 'yvessav@free.fr', 'savang', 'yves', '0145253573', '75007', '8 villa de Ségur', 'France', 'Paris')
+2018-05-31 16:13:46,112 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 2, 'babel@free.fr', 'joris', 'boris', '0620020630', '89255', '19 rue de la Perche', 'France', 'Perpete')
+2018-05-31 16:13:46,456 DEBUG main org.hibernate.SQL - select vol0_.num as num1_3_, vol0_.dateArrivee as dateArri2_3_, vol0_.refLocArrivee as refLocAr5_3_, vol0_.dateDepart as dateDepa3_3_, vol0_.refLocDepart as refLocDe6_3_, vol0_.prix as prix4_3_ from Vol vol0_
+2018-05-31 16:14:07,047 DEBUG main org.hibernate.SQL - alter table Login drop foreign key FKcifyh7m710n4epdqn1qbiwqgr
+2018-05-31 16:14:07,066 DEBUG main org.hibernate.SQL - alter table Vol drop foreign key FKfyats76ha60524dxdbsx441kg
+2018-05-31 16:14:07,074 DEBUG main org.hibernate.SQL - alter table Vol drop foreign key FK8ycbrr9dx90p0qrnn3q60kqp
+2018-05-31 16:14:07,082 DEBUG main org.hibernate.SQL - drop table if exists hibernate_sequence
+2018-05-31 16:14:07,098 DEBUG main org.hibernate.SQL - drop table if exists Localite
+2018-05-31 16:14:07,115 DEBUG main org.hibernate.SQL - drop table if exists Login
+2018-05-31 16:14:07,130 DEBUG main org.hibernate.SQL - drop table if exists Personne
+2018-05-31 16:14:07,144 DEBUG main org.hibernate.SQL - drop table if exists Vol
+2018-05-31 16:14:07,162 DEBUG main org.hibernate.SQL - create table hibernate_sequence (next_val bigint) engine=InnoDB
+2018-05-31 16:14:07,192 DEBUG main org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+2018-05-31 16:14:07,196 DEBUG main org.hibernate.SQL - create table Localite (id bigint not null auto_increment, aeroport varchar(255), ville varchar(255), primary key (id)) engine=InnoDB
+2018-05-31 16:14:07,222 DEBUG main org.hibernate.SQL - create table Login (id bigint not null auto_increment, password varchar(255), username varchar(255), client_id bigint, primary key (id)) engine=InnoDB
+2018-05-31 16:14:07,246 DEBUG main org.hibernate.SQL - create table Personne (typePersonne varchar(31) not null, id bigint not null, email varchar(255), nom varchar(255), prenom varchar(255), telephone varchar(255), codePostal varchar(255), numEtRue varchar(255), pays varchar(255), ville varchar(255), primary key (id)) engine=InnoDB
+2018-05-31 16:14:07,267 DEBUG main org.hibernate.SQL - create table Vol (num bigint not null auto_increment, dateArrivee date, dateDepart date, prix double precision, refLocArrivee bigint, refLocDepart bigint, primary key (num)) engine=InnoDB
+2018-05-31 16:14:07,286 DEBUG main org.hibernate.SQL - alter table Login add constraint FKcifyh7m710n4epdqn1qbiwqgr foreign key (client_id) references Personne (id)
+2018-05-31 16:14:07,341 DEBUG main org.hibernate.SQL - alter table Vol add constraint FKfyats76ha60524dxdbsx441kg foreign key (refLocArrivee) references Localite (id)
+2018-05-31 16:14:07,386 DEBUG main org.hibernate.SQL - alter table Vol add constraint FK8ycbrr9dx90p0qrnn3q60kqp foreign key (refLocDepart) references Localite (id)
+2018-05-31 16:14:07,440 DEBUG main org.hibernate.SQL - <<<<<<< HEAD
+2018-05-31 16:14:07,440 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 1 , 'Paris' , 'Paris-Orly' )
+2018-05-31 16:14:07,444 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 2 , 'Paris' , 'Paris-Roissy' )
+2018-05-31 16:14:07,448 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 3 , 'Toulouse' , 'Toulouse-Blagnac' )
+2018-05-31 16:14:07,456 DEBUG main org.hibernate.SQL - INSERT INTO Localite(id , ville , aeroport)  VALUES ( 4 , 'Nice' , 'Nice-' )
+2018-05-31 16:14:07,460 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 1 , 100.0 , 1 ,  '2017-09-20 18:10:00' , 3 , '2017-09-20 19:30:00' )
+2018-05-31 16:14:07,461 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 2 , 110.0 , 3 ,  '2017-09-20 08:10:00' , 1 , '2017-09-20 09:20:00' )
+2018-05-31 16:14:07,461 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 3 , 80.0  , 1 ,  '2018-09-20 12:20:00' , 4 , '2018-09-20 13:30:00' )
+2018-05-31 16:14:07,462 DEBUG main org.hibernate.SQL - INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 4 , 70.0  , 4 ,  '2018-09-20 20:30:00' , 1 , '2018-09-20 21:15:00' )
+2018-05-31 16:14:07,462 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 1, 'yvessav@free.fr', 'savang', 'yves', '0145253573', '75007', '8 villa de Ségur', 'France', 'Paris')
+2018-05-31 16:14:07,466 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 2, 'babel@free.fr', 'joris', 'boris', '0620020630', '89255', '19 rue de la Perche', 'France', 'Perpete')
+2018-05-31 16:14:07,760 DEBUG main org.hibernate.SQL - select vol0_.num as num1_3_, vol0_.dateArrivee as dateArri2_3_, vol0_.refLocArrivee as refLocAr5_3_, vol0_.dateDepart as dateDepa3_3_, vol0_.refLocDepart as refLocDe6_3_, vol0_.prix as prix4_3_ from Vol vol0_
