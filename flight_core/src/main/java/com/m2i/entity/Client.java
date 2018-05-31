@@ -5,6 +5,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Client")
-public class Client {
+public class Client extends Personne {
 	
 }
