@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Adresse {
-	private String numRue;
+	private String numEtRue;
 	private String codePostal;
 	private String ville;
 	private String pays;
@@ -12,13 +12,25 @@ public class Adresse {
 	public Adresse() {
 
 	}
+	
+	
 
-	public String getNumRue() {
-		return numRue;
+	public Adresse(String numEtRue, String codePostal, String ville, String pays) {
+		super();
+		this.numEtRue = numEtRue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+		this.pays = pays;
 	}
 
-	public void setNumRue(String numRue) {
-		this.numRue = numRue;
+
+
+	public String getNumEtRue() {
+		return numEtRue;
+	}
+
+	public void setNumEtRue(String numRue) {
+		this.numEtRue = numRue;
 	}
 
 	public String getCodePostal() {

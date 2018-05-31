@@ -9,16 +9,27 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorValue("CLIENT")
+@DiscriminatorValue("CLI")
 public class Client extends Personne {
 	@Embedded
 	private Adresse adresse;
-	@OneToOne
+	@OneToOne(mappedBy="client")
 	private Login login;
 
 	public Client() {
 
 	}
+	
+	
+
+	public Client(String nom, String prenom, String email, String telephone, Adresse adresse, Login login) {
+		super(nom, prenom, email, telephone);
+		this.adresse = adresse;
+		
+		
+	}
+
+
 
 	public Adresse getAdresse() {
 		return adresse;

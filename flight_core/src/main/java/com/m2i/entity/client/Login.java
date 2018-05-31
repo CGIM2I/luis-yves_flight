@@ -10,6 +10,7 @@ public class Login {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	private Client client;
 	private String username;
 	private String password;
 
@@ -41,5 +42,14 @@ public class Login {
 		this.id = id;
 	}
 
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+	
 	
 }

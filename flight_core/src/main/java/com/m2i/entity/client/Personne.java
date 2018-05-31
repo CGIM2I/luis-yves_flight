@@ -24,6 +24,18 @@ public class Personne {
 
 	private String email;
 	private String telephone;
+	
+	public Personne() {
+		
+	}
+
+	public Personne(String nom, String prenom, String email, String telephone) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+	}
 
 	public Long getId() {
 		return id;
