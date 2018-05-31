@@ -1,5 +1,7 @@
 package com.m2i.test;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +36,17 @@ public class TestClientDAO {
 		
 	}
 	
+	
+	public void deleteTest() {
+		daoClient.deleteClient(2L);
+	}
+	
 	@Test
-	public void test2() {
-		
+	public void getAllTest() {
+		List<Client> list = daoClient.getClients();
+		System.out.println("Liste des clients :");
+		for (Client client : list) {
+			System.out.println("\t" + client);
+		}
 	}
 }

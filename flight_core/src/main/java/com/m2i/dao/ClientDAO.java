@@ -1,5 +1,7 @@
 package com.m2i.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -40,8 +42,9 @@ public class ClientDAO implements IClientDAO {
 	}
 
 	@Override
-	public void getClients() {
-		// TODO Auto-generated method stub
+	public List<Client> getClients() {
+		return entityManager.createQuery("SELECT c FROM Client c",Client.class)
+				.getResultList();
 		
 	}
 

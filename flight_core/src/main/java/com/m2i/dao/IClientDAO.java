@@ -1,5 +1,7 @@
 package com.m2i.dao;
 
+import java.util.List;
+
 import com.m2i.entity.client.Client;
 
 public interface IClientDAO {
@@ -8,5 +10,5 @@ public interface IClientDAO {
 	public void updateClient(Client c);
 	public void deleteClient(Long id);
 	
-	public void getClients();
+	public List<Client> getClients();
 }

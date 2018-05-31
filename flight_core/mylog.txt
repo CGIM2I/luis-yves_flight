@@ -644,3 +644,7 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown da
 	... 60 more
 2018-05-31 16:05:26,554 ERROR main org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Duplicate entry '1' for key 'PRIMARY'
 2018-05-31 16:05:26,557 ERROR main org.hibernate.internal.ExceptionMapperStandardImpl - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2018-05-31 16:20:21,952 ERROR main org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Duplicate entry '1' for key 'PRIMARY'
+2018-05-31 16:20:21,956 ERROR main org.hibernate.internal.ExceptionMapperStandardImpl - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2018-05-31 16:30:03,179 ERROR main org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Duplicate entry '1' for key 'PRIMARY'
+2018-05-31 16:30:03,182 ERROR main org.hibernate.internal.ExceptionMapperStandardImpl - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
