@@ -57,4 +57,11 @@ public class Adresse {
 		this.pays = pays;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "Adresse [numéro et rue=" + numEtRue + ", codePostal=" + codePostal + ", ville=" + ville + ", pays=" + pays
+				+ "]";
+	}
 }
