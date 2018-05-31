@@ -291,3 +291,26 @@
 2018-05-31 16:02:48,787 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 2, 'babel@free.fr', 'joris', 'boris', '0620020630', '89255', '19 rue de la Perche', 'France', 'Perpete')
 2018-05-31 16:02:48,791 DEBUG main org.hibernate.SQL - )
 2018-05-31 16:02:48,792 DEBUG main org.hibernate.SQL - )
+2018-05-31 16:05:25,946 DEBUG main org.hibernate.SQL - alter table Login drop foreign key FKcifyh7m710n4epdqn1qbiwqgr
+2018-05-31 16:05:25,965 DEBUG main org.hibernate.SQL - alter table Vol drop foreign key FKfyats76ha60524dxdbsx441kg
+2018-05-31 16:05:25,972 DEBUG main org.hibernate.SQL - alter table Vol drop foreign key FK8ycbrr9dx90p0qrnn3q60kqp
+2018-05-31 16:05:25,979 DEBUG main org.hibernate.SQL - drop table if exists hibernate_sequence
+2018-05-31 16:05:25,995 DEBUG main org.hibernate.SQL - drop table if exists Localite
+2018-05-31 16:05:26,009 DEBUG main org.hibernate.SQL - drop table if exists Login
+2018-05-31 16:05:26,019 DEBUG main org.hibernate.SQL - drop table if exists Personne
+2018-05-31 16:05:26,029 DEBUG main org.hibernate.SQL - drop table if exists Vol
+2018-05-31 16:05:26,043 DEBUG main org.hibernate.SQL - create table hibernate_sequence (next_val bigint) engine=InnoDB
+2018-05-31 16:05:26,058 DEBUG main org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+2018-05-31 16:05:26,062 DEBUG main org.hibernate.SQL - create table Localite (id bigint not null auto_increment, aeroport varchar(255), ville varchar(255), primary key (id)) engine=InnoDB
+2018-05-31 16:05:26,073 DEBUG main org.hibernate.SQL - create table Login (id bigint not null auto_increment, password varchar(255), username varchar(255), client_id bigint, primary key (id)) engine=InnoDB
+2018-05-31 16:05:26,084 DEBUG main org.hibernate.SQL - create table Personne (typePersonne varchar(31) not null, id bigint not null, email varchar(255), nom varchar(255), prenom varchar(255), telephone varchar(255), codePostal varchar(255), numEtRue varchar(255), pays varchar(255), ville varchar(255), primary key (id)) engine=InnoDB
+2018-05-31 16:05:26,095 DEBUG main org.hibernate.SQL - create table Vol (num bigint not null auto_increment, dateArrivee date, dateDepart date, prix double precision, refLocArrivee bigint, refLocDepart bigint, primary key (num)) engine=InnoDB
+2018-05-31 16:05:26,105 DEBUG main org.hibernate.SQL - alter table Login add constraint FKcifyh7m710n4epdqn1qbiwqgr foreign key (client_id) references Personne (id)
+2018-05-31 16:05:26,166 DEBUG main org.hibernate.SQL - alter table Vol add constraint FKfyats76ha60524dxdbsx441kg foreign key (refLocArrivee) references Localite (id)
+2018-05-31 16:05:26,240 DEBUG main org.hibernate.SQL - alter table Vol add constraint FK8ycbrr9dx90p0qrnn3q60kqp foreign key (refLocDepart) references Localite (id)
+2018-05-31 16:05:26,305 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 1, 'yvessav@free.fr', 'savang', 'yves', '0145253573', '75007', '8 villa de Ségur', 'France', 'Paris')
+2018-05-31 16:05:26,311 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 2, 'babel@free.fr', 'joris', 'boris', '0620020630', '89255', '19 rue de la Perche', 'France', 'Perpete')
+2018-05-31 16:05:26,315 DEBUG main org.hibernate.SQL - INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 3, 'babel@free.fr', 'joris', 'boris', '0620020630', '89255', '19 rue de la Perche', 'France', 'Perpete')
+2018-05-31 16:05:26,525 DEBUG main org.hibernate.SQL - select next_val as id_val from hibernate_sequence for update
+2018-05-31 16:05:26,534 DEBUG main org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+2018-05-31 16:05:26,551 DEBUG main org.hibernate.SQL - insert into Personne (email, nom, prenom, telephone, codePostal, numEtRue, pays, ville, typePersonne, id) values (?, ?, ?, ?, ?, ?, ?, ?, 'CLI', ?)
