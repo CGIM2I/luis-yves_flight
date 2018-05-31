@@ -49,4 +49,10 @@ public class TestClientDAO {
 			System.out.println("\t" + client);
 		}
 	}
+	
+	@Test
+	public void getClientTest() {
+		Client c = daoClient.readClient(3L);
+		System.out.println(c);
+	}
 }
