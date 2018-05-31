@@ -1,4 +1,4 @@
-package com.m2i.entity;
+package com.m2i.entity.vol;
 
 import java.io.Serializable;
 import java.util.Date;

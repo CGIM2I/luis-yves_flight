@@ -1,4 +1,4 @@
-package com.m2i.entity;
+package com.m2i.entity.vol;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

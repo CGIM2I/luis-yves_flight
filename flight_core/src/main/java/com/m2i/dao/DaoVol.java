@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
-import com.m2i.entity.Vol;
+import com.m2i.entity.vol.Vol;
 
 @Component
 @Transactional
@@ -35,16 +35,16 @@ public class DaoVol implements IDaoVol{
 
 	@Override
 	public void deleteVol(Vol vol) {
-		// TODO Auto-generated method stub
-		
+		entityManager.remove(vol);
 	}
 
 
 
 	@Override
 	public List<Vol> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return entityManager.createNamedQuery(
+				"Vol.findVolByNumVol",Vol.class).
 	}
 	
 }

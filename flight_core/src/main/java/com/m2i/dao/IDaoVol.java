@@ -2,7 +2,7 @@ package com.m2i.dao;
 
 import java.util.List;
 
-import com.m2i.entity.Vol;
+import com.m2i.entity.vol.Vol;
 
 public interface IDaoVol {
 	public Vol findVol(Long num);

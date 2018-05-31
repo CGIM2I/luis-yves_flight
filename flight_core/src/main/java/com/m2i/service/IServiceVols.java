@@ -2,8 +2,8 @@ package com.m2i.service;
 
 import java.util.Date;
 
-import com.m2i.entity.Ville;
-import com.m2i.entity.Vol;
+import com.m2i.entity.vol.Ville;
+import com.m2i.entity.vol.Vol;
 
 public interface IServiceVols {
 	public void rechercherVolsAuDepart(Ville villeDepart, Date dateDepart);
