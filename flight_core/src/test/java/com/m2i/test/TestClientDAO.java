@@ -19,7 +19,8 @@ import com.m2i.entity.client.Login;
 public class TestClientDAO {
 	@Autowired
 	private IClientDAO daoClient;
-	private ILoginDAO daoLogin;
+//	@Autowired
+//	private ILoginDAO daoLogin;
 	
 	@Test
 	public void test1() {
