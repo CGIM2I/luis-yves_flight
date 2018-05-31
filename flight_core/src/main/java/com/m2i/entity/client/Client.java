@@ -1,4 +1,4 @@
-package com.m2i.entity;
+package com.m2i.entity.client;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

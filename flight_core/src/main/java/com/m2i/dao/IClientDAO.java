@@ -1,6 +1,6 @@
 package com.m2i.dao;
 
-import com.m2i.entity.Client;
+import com.m2i.entity.client.Client;
 
 public interface IClientDAO {
 	public void createClient(Client c);

@@ -1,6 +1,6 @@
 package com.m2i.service;
 
-import com.m2i.entity.Client;
+import com.m2i.entity.client.Client;
 
 public interface IServiceClient {
 	public Client rechercherClientParId();
