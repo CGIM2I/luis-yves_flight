@@ -11,4 +11,14 @@ INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTime
 
 INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 1, 'yvessav@free.fr', 'savang', 'yves', '0145253573', '75007', '8 villa de Ségur', 'France', 'Paris')
 INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 2, 'babel@free.fr', 'joris', 'boris', '0620020630', '89255', '19 rue de la Perche', 'France', 'Perpete')
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 3, 'babel@free.fr', 'joris', 'boris', '0620020630', '89255', '19 rue de la Perche', 'France', 'Perpete')
+=======
+)
+)
+>>>>>>> 57e0d24652e043f4df078d65261f471a771f0524
+>>>>>>> 8fe79cbf0134e4a03bb14433295618a4f29f69ff
+>>>>>>> 2524311bd07c44ce5eb0e0e095cbc3da77e52283

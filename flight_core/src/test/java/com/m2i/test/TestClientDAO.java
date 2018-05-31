@@ -23,7 +23,7 @@ public class TestClientDAO {
 //	private ILoginDAO daoLogin;
 	
 	@Test
-	public void test1() {
+	public void createTest() {
 		Adresse a = new Adresse("11 rue François Millet", "75016", "Paris", "France");
 		Login l = new Login();
 		l.setUsername("yves");
@@ -31,8 +31,6 @@ public class TestClientDAO {
 		Client c = new Client("Savang", "Yves", "yvessav@free.fr", "010000000", a);
 		
 		daoClient.createClient(c);
-		
-		daoClient.deleteClient(1L);
 		
 	}
 	
