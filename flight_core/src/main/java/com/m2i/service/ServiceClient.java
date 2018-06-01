@@ -1,28 +1,35 @@
 package com.m2i.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.m2i.dao.IClientDAO;
+import com.m2i.dao.ILoginDAO;
 import com.m2i.entity.client.Client;
 import com.m2i.entity.client.Login;
 
+@Component
 public class ServiceClient implements IServiceClient {
-	@Autowired IClientDAO daoClient;
+	@Autowired
+	IClientDAO daoClient;
+	
+	@Autowired
+	ILoginDAO daoLogin;
 
 	@Override
 	public Client rechercherClientParId(Long id) {
-		return null;
+		return daoClient.readClient(id);
 	}
 
 	@Override
 	public void enregistrerClient(Client c, Login l) {
-		// TODO Auto-generated method stub
-
+		daoClient.createClient(c);
+		daoLogin.createLogin(l);
 	}
 
 	@Override
 	public void authentifierClient(String u, String p) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
