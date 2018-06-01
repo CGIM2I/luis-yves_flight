@@ -63,9 +63,9 @@ public class DaoVol implements IDaoVol{
 	@Override
 	public List<Vol> rechercherVolsEntre(Localite villeDepart, Localite villeArrive) {
 		return entityManager.createQuery("SELECT vol FROM Vol vol "
-				+ "WHERE vol.depart.localite.ville=:villeDepart AND vol.arrive.localite.ville=:villeArrive",Vol.class)
-				.setParameter("villeDepart", villeDepart)
-				.setParameter("villeArrive",villeArrive)
+				+ "WHERE vol.depart.localite.ville=:villeDepart AND vol.arrivee.localite.ville=:villeArrive",Vol.class)
+				.setParameter("villeDepart", villeDepart.getVille())
+				.setParameter("villeArrive",villeArrive.getVille())
 				.getResultList();
 	}
 

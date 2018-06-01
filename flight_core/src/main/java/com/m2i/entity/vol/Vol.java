@@ -28,8 +28,6 @@ public class Vol {
 	private Long num;
 	
 	private Double prix;
-	
-	
 
 	
 	@Embedded

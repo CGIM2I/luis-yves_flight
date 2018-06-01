@@ -31,16 +31,34 @@ public class TestVol {
 		}
 	}
 	@Test
-	public void testCreateVol() {
+	public void testAjouterVol() {
+		Date madate = new Date();
+		System.out.println(madate);
 		Date date1 = DateVol.dateFromString("2018-01-01");
 		Date date2 = DateVol.dateFromString("2018-01-02");
-		Localite localiteBerlin = new Localite(28L,"Berlin","berlin aeroport");
-		Localite localiteHavane = new Localite(28L,"Havane","havane aeroport");
+		Localite localiteBerlin = new Localite(128L,"Berlin","berlin aeroport");
+		Localite localiteHavane = new Localite(129L,"Havane","havane aeroport");
 		Phase phase1 = new Phase(localiteBerlin,date1);
 		Phase phase2 = new Phase(localiteHavane,date2);
 		Vol vol = new Vol(58L, 45D, phase1, phase2);
 		System.out.println(vol.toString());
 		
 	}
-
+	@Test
+	public void testDepartArrive() {
+		System.out.println("test depart arrivee");
+		Localite Singapour = new Localite(325L,"Singapour","Singapour aeroport");
+		Localite Honkong = new Localite(328L,"Honkong","Honkong aeroport");
+		daoVol.rechercherVolsEntre(Singapour, Honkong);
+		List<Vol> listeVols = daoVol.findAll();
+		for (Vol vol : listeVols) {
+			System.out.println(vol.toString());
+		}
+	}
+	@Test
+	public void rechercherVolParNumero() {
+		Vol vol = daoVol.findVol(1L);
+		System.out.println(vol);
+	}
+	
 }

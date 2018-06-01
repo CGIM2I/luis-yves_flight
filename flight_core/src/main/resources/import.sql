@@ -3,10 +3,8 @@ INSERT INTO Localite(id , ville , aeroport)  VALUES ( 2 , 'Paris' , 'Paris-Roiss
 INSERT INTO Localite(id , ville , aeroport)  VALUES ( 3 , 'Toulouse' , 'Toulouse-Blagnac' )
 INSERT INTO Localite(id , ville , aeroport)  VALUES ( 4 , 'Nice' , 'Nice-' )
 
-INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 1 , 100.0 , 1 ,  '2017-09-20 18:10:00' , 3 , '2017-09-20 19:30:00' )
-INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 2 , 110.0 , 3 ,  '2017-09-20 08:10:00' , 1 , '2017-09-20 09:20:00' )
-INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 3 , 80.0  , 1 ,  '2018-09-20 12:20:00' , 4 , '2018-09-20 13:30:00' )
-INSERT INTO Vol(num , prix , refLocDepart,dateTimeDepart, refLocArrivee,dateTimeArrivee) VALUES ( 4 , 70.0  , 4 ,  '2018-09-20 20:30:00' , 1 , '2018-09-20 21:15:00' ) 
+INSERT INTO Vol(num , dateArrivee , dateDepart,prix, refLocArrivee,refLocDepart) VALUES ( 1 , '2017-09-20 18:10:00' ,'2017-09-20 19:30:00' ,800 , 1 , 2 )
+INSERT INTO Vol(num , dateArrivee , dateDepart,prix, refLocArrivee,refLocDepart) VALUES ( 2 , '2017-9-25 18:10:00' ,'2017-12-25 19:30:00' ,800 , 2 , 1 )
 
 
 INSERT INTO PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) VALUES ('CLI', 1, 'yvessav@free.fr', 'savang', 'yves', '0145253573', '75007', '8 villa de Ségur', 'France', 'Paris')
