@@ -28,7 +28,10 @@ public class LoginDAO implements ILoginDAO {
 	
 	@Override
 	public Login readLogin(String username) {
-		return null;
+		return entityManager.createNamedQuery(
+				"Login.findLoginWithUsername" , Login.class)
+								.setParameter("un", username)
+					            .getSingleResult();
 	}
 
 	@Override

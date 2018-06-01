@@ -2,6 +2,7 @@ package com.m2i.entity.client;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,17 +25,29 @@ public class Personne {
 
 	private String email;
 	private String telephone;
-	
+
+	@Embedded
+	private Adresse adresse;
+
 	public Personne() {
-		
+
 	}
 
-	public Personne(String nom, String prenom, String email, String telephone) {
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+
+	public Personne(String nom, String prenom, String email, String telephone, Adresse adresse) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.telephone = telephone;
+		this.adresse = adresse;
 	}
 
 	public Long getId() {

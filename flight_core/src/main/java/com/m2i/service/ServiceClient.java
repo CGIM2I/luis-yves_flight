@@ -29,7 +29,10 @@ public class ServiceClient implements IServiceClient {
 
 	@Override
 	public boolean authentifierClient(String username, String password) {
-		daoLogin.
+		Login l = daoLogin.readLogin(username);
+		if(l.getPassword().compareTo(password) == 0)
+			return true;
+		return false;
 	}
 
 	@Override

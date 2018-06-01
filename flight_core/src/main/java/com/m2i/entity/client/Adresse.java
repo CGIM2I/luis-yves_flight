@@ -13,8 +13,6 @@ public class Adresse {
 
 	}
 	
-	
-
 	public Adresse(String numEtRue, String codePostal, String ville, String pays) {
 		super();
 		this.numEtRue = numEtRue;
@@ -22,8 +20,6 @@ public class Adresse {
 		this.ville = ville;
 		this.pays = pays;
 	}
-
-
 
 	public String getNumEtRue() {
 		return numEtRue;

@@ -6,9 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
 @Entity
+@NamedQuery(name="Login.findLoginWithUsername", query="SELECT l FROM Login l WHERE l.username = :un")
 public class Login {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
