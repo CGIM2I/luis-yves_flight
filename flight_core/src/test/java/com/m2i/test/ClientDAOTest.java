@@ -18,7 +18,7 @@ import com.m2i.entity.client.Login;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="/beans.xml")
-public class TestClientDAO {
+public class ClientDAOTest {
 	@Autowired
 	private IClientDAO daoClient;
 //	@Autowired

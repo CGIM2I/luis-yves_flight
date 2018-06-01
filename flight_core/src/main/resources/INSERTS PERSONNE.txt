@@ -98,3 +98,4 @@ insert into PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTA
 insert into PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) values ('CLI', 98, 'kcanon2p@google.com', 'Canon', 'Korrie', '4383421625', null, '25 Briar Crest Crossing', 'China', 'Anfu');
 insert into PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) values ('CLI', 99, 'dcharlick2q@nature.com', 'Charlick', 'Dukie', '1512338120', null, '7870 Hintze Avenue', 'China', 'Fanhu');
 insert into PERSONNE (TYPEPERSONNE, ID, EMAIL, NOM, PRENOM, TELEPHONE, CODEPOSTAL, NUMETRUE, PAYS, VILLE) values ('CLI', 100, 'emacconnechie2r@scientificamerican.com', 'MacConnechie', 'Edan', '3408475325', '5139', '0 Milwaukee Pass', 'Argentina', 'Marull');
+
