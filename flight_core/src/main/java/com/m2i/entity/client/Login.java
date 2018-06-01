@@ -6,11 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
+@NamedQueries({
+	@NamedQuery(name="Login.findLoginWithUsername", query="SELECT l FROM Login l WHERE l.username = :un"),
+	@NamedQuery(name="Login.findLoginWithClientId", query="SELECT l FROM Login l WHERE l.client.id = :id")
+})
 @Entity
-@NamedQuery(name="Login.findLoginWithUsername", query="SELECT l FROM Login l WHERE l.username = :un")
 public class Login {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

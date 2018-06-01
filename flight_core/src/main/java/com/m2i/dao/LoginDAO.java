@@ -44,7 +44,11 @@ public class LoginDAO implements ILoginDAO {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		Login l = entityManager.createNamedQuery(
+				"Login.findLoginWithClientId" , Login.class)
+								.setParameter("id", id)
+					            .getSingleResult();
+		entityManager.remove(l);
 		
 	}
 }

@@ -43,7 +43,8 @@ public class ServiceClient implements IServiceClient {
 
 	@Override
 	public void supprimerInfosClient(Client c) {
-		daoClient.deleteClient(c.getId());
+		daoLogin.delete(c.getId());
+		//daoClient.deleteClient(c.getId());
 	}
 
 }
