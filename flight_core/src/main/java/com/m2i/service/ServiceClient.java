@@ -28,9 +28,8 @@ public class ServiceClient implements IServiceClient {
 	}
 
 	@Override
-	public void authentifierClient(String u, String p) {
-		
-
+	public boolean authentifierClient(String username, String password) {
+		return true;
 	}
 
 	@Override
