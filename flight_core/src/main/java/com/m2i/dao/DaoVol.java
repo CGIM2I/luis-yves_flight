@@ -68,7 +68,9 @@ public class DaoVol implements IDaoVol{
 				.setParameter("villeArrive",villeArrive.getVille())
 				.getResultList();
 	}
-
+	public void name() {
+		
+	}
 
 	
 }
