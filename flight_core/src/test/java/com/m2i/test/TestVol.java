@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.m2i.dao.DaoLocalite;
+import com.m2i.dao.IDaoLocalite;
 import com.m2i.dao.IDaoVol;
 import com.m2i.entity.vol.DateVol;
 import com.m2i.entity.vol.Localite;
@@ -21,7 +23,8 @@ public class TestVol {
 
 	@Autowired
 	private IDaoVol daoVol;
-	
+	@Autowired
+	private IDaoLocalite daoLocalite;
 	@Test
 	public void testfindAll() {
 		List <Vol> vols = daoVol.findAll();
@@ -36,11 +39,13 @@ public class TestVol {
 		System.out.println(madate);
 		Date date1 = DateVol.dateFromString("2018-01-01");
 		Date date2 = DateVol.dateFromString("2018-01-02");
-		Localite localiteBerlin = new Localite(128L,"Berlin","berlin aeroport");
-		Localite localiteHavane = new Localite(129L,"Havane","havane aeroport");
+		Localite localiteBerlin = new Localite(null,"Berlin","berlin aeroport");
+		Localite localiteHavane = new Localite(null,"Havane","havane aeroport");
+		daoLocalite.createLocalite(localiteHavane);
+		daoLocalite.createLocalite(localiteBerlin);
 		Phase phase1 = new Phase(localiteBerlin,date1);
 		Phase phase2 = new Phase(localiteHavane,date2);
-		Vol vol = new Vol(58L, 45D, phase1, phase2);
+		Vol vol = new Vol(null, 45D, phase1, phase2);
 		daoVol.createVol(vol);
 		System.out.println(vol.toString());
 		
@@ -48,8 +53,8 @@ public class TestVol {
 	@Test
 	public void testEntre() {
 		System.out.println("test depart arrivee");
-		Localite Singapour = new Localite(325L,"Singapour","Singapour aeroport");
-		Localite Honkong = new Localite(328L,"Honkong","Honkong aeroport");
+		Localite Singapour = new Localite(null,"Singapour","Singapour aeroport");
+		Localite Honkong = new Localite(null,"Honkong","Honkong aeroport");
 		daoVol.rechercherVolsEntre(Singapour, Honkong);
 		List<Vol> listeVols = daoVol.findAll();
 		for (Vol vol : listeVols) {
@@ -66,11 +71,13 @@ public class TestVol {
 		System.out.println("test depart arrivee");
 		Date date1 = DateVol.dateFromString("2018-01-01");
 		Date date2 = DateVol.dateFromString("2018-01-02");
-		Localite Singapour = new Localite(1325L,"Singapour","Singapour aeroport");
-		Localite Honkong = new Localite(1328L,"Honkong","Honkong aeroport");
+		Localite Singapour = new Localite(null,"Singapour","Singapour aeroport");
+		Localite Honkong = new Localite(null,"Honkong","Honkong aeroport");
+		daoLocalite.createLocalite(Singapour);
+		daoLocalite.createLocalite(Honkong);
 		Phase phase1 = new Phase(Singapour,date1);
 		Phase phase2 = new Phase(Honkong,date2);
-		Vol vol = new Vol(158L, 545D, phase1, phase2);
+		Vol vol = new Vol(null, 545D, phase1, phase2);
 		daoVol.createVol(vol);
 		daoVol.rechercherVolsEntre(Singapour, Honkong);
 	}
