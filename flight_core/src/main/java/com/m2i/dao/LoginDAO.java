@@ -2,12 +2,14 @@ package com.m2i.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
 import com.m2i.entity.client.Login;
 
 @Component
+@Transactional
 public class LoginDAO implements ILoginDAO {
 	
 	
@@ -17,7 +19,7 @@ public class LoginDAO implements ILoginDAO {
 
 	@Override
 	public void createLogin(Login l) {
-		// TODO Auto-generated method stub
+		entityManager.persist(l);
 	}
 
 	@Override

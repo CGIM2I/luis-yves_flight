@@ -21,8 +21,8 @@ import com.m2i.entity.client.Login;
 public class ClientDAOTest {
 	@Autowired
 	private IClientDAO daoClient;
-//	@Autowired
-//	private ILoginDAO daoLogin;
+	@Autowired
+	private ILoginDAO daoLogin;
 	
 	@Test
 	public void createTest() {
@@ -30,9 +30,12 @@ public class ClientDAOTest {
 		Login l = new Login();
 		l.setUsername("yves");
 		l.setPassword("1234");
+		
 		Client c = new Client("Savang", "Yves", "yvessav@free.fr", "010000000", a);
+		l.setClient(c);
 		
 		daoClient.createClient(c);
+		daoLogin.createLogin(l);
 		
 	}
 	
