@@ -37,14 +37,13 @@ public class ServiceClient implements IServiceClient {
 
 	@Override
 	public void modifierCoorClient(Client c) {
-		// TODO Auto-generated method stub
+		daoClient.updateClient(c);
 
 	}
 
 	@Override
 	public void supprimerInfosClient(Client c) {
-		// TODO Auto-generated method stub
-
+		daoClient.deleteClient(c.getId());
 	}
 
 }
