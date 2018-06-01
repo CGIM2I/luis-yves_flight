@@ -53,7 +53,7 @@ public class DaoVol implements IDaoVol{
 		//SELECT * from vol inner join localite on localite.id =vol.refLocDepart WHERE localite.ville="Paris" AND DATE_FORMAT(vol.dateTimeDepart,"%Y/%M")=2017/01
 		return entityManager.createQuery("SELECT vol FROM Vol vol INNER JOIN "
 				+ "Localite localite ON vol.refLocDepart = localite.id "
-				+ "WHERE TO_DATE(dateDepart,YYYY-mm-dd)=:dateTimeDepart"
+				+ "WHERE STR_TO_DATE(dateDepart,%Y-%m-%d)=:dateTimeDepart"//FUNCTION("date_format", o.effectiveStartDate, "the_date_format")
 				+ "AND localite.ville=:villeDepart", 
 				Vol.class).setParameter("dateDepart", dateDepart).setParameter("villeDepart", villeDepart).
 				getResultList();

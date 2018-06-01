@@ -12,6 +12,8 @@ public interface IDaoVol {
 	public List<Vol> rechercherVolsEntre(Localite villeDepart,Localite villeArrive);
 	public Vol findVol(Long num);//rechercherVolParNum
 	public List <Localite> rechercherListeLocalites();
+
+	//CRUD pour vol
 	public void createVol(Vol vol);
 	public void updateVol(Vol vol);
 	public void deleteVol(Vol vol);
