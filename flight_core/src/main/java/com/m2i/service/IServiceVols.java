@@ -14,5 +14,6 @@ public interface IServiceVols {
 	public List<Localite> rechercherListeLocalites();
 	public void ajouterVol(Vol vol);
 	public void modifierVol(Vol vol);
+	public void supprimerVol(Vol vol);
 	
 }

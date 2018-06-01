@@ -69,10 +69,6 @@ public class DaoVol implements IDaoVol{
 				.getResultList();
 	}
 
-	@Override
-	public List<Localite> rechercherListeLocalites() {
-		return entityManager.createQuery("SELECT localites FROM Localite as localites",Localite.class)
-				.getResultList();
-	}
+
 	
 }

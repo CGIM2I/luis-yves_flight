@@ -37,20 +37,24 @@ public class ServiceVols implements IServiceVols {
 
 	@Override
 	public List<Localite> rechercherListeLocalites() {
-		// TODO Auto-generated method stub
-		return null;
+		return daoLocalite.rechercherListeLocalites();
 	}
 
 	@Override
 	public void ajouterVol(Vol vol) {
-		// TODO Auto-generated method stub
+		daoVol.createVol(vol);
 		
 	}
 
 	@Override
 	public void modifierVol(Vol vol) {
-		// TODO Auto-generated method stub
+		daoVol.updateVol(vol);
 		
+	}
+
+	@Override
+	public void supprimerVol(Vol vol) {
+		daoVol.deleteVol(vol);
 	}
 	
 }
