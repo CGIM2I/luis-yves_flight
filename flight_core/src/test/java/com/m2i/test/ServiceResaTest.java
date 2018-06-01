@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.m2i.dao.IClientDAO;
 import com.m2i.dao.IReservationDAO;
 import com.m2i.entity.Reservation;
 import com.m2i.entity.client.Adresse;
@@ -20,7 +21,8 @@ import com.m2i.entity.client.Personne;
 public class ServiceResaTest {
 	@Autowired
 	private IReservationDAO daoRes;
-	
+	@Autowired
+	private IClientDAO daoClient;
 	@Test
 	public void testNouvelleRSA() {
 		String nom = "Dupont";
@@ -29,9 +31,11 @@ public class ServiceResaTest {
 		String tel ="0123456789";
 		Adresse adresse = new Adresse("45 rue du Maine", "981247", "Lyon", "France");
 		Client client = new Client(nom,prenom,mail,tel, adresse);
+		daoClient.createClient(client);
 		Reservation reservation = new Reservation();
 		reservation.setClient(client);
 		Personne personne = new Personne();
+		personne.setId(null);
 		personne.setNom(nom);
 		personne.setPrenom(prenom);
 		personne.setEmail(mail);
@@ -40,9 +44,7 @@ public class ServiceResaTest {
 		List <Personne> listePersonnes = new ArrayList<Personne>();
 		listePersonnes.add(personne);
 		reservation.setPassagers(listePersonnes);
-		
+		System.out.println(reservation.toString());
 		daoRes.createResa(reservation);
-
-		
 	}
 }
