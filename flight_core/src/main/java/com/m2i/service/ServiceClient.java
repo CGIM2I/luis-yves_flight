@@ -29,7 +29,7 @@ public class ServiceClient implements IServiceClient {
 
 	@Override
 	public boolean authentifierClient(String username, String password) {
-		return true;
+		daoLogin.
 	}
 
 	@Override
