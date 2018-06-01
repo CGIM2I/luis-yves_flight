@@ -45,8 +45,22 @@ public class ServiceClientTest {
 	public void authentifierClientTest() {
 		String username = "bmccaighey2k";
 		String password = "VA0o0eQM";
-		
+		if(sc.authentifierClient(username, password))
+			System.out.println("TROUVÉ");
 	}
 	
+	@Test
+	public void modifierCoorClientTest() {
+		Client c = sc.rechercherClientParId(27L);
+		c.setNom("Molyneux");
+		c.setPrenom("Peter");
+		sc.modifierCoorClient(c);
+	}
+	
+	@Test
+	public void supprimerInfosClient() {
+		Client c = sc.rechercherClientParId(27L);
+		sc.supprimerInfosClient(c);
+	}
 	
 }
