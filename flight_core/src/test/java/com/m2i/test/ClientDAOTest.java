@@ -24,21 +24,6 @@ public class ClientDAOTest {
 	@Autowired
 	private ILoginDAO daoLogin;
 	
-	@Test
-	public void createTest() {
-		Adresse a = new Adresse("11 rue François Millet", "75016", "Paris", "France");
-		Login l = new Login();
-		l.setUsername("yves");
-		l.setPassword("1234");
-		
-		Client c = new Client("Savang", "Yves", "yvessav@free.fr", "010000000", a);
-		l.setClient(c);
-		
-		daoClient.createClient(c);
-		daoLogin.createLogin(l);
-		
-	}
-	
 	
 	public void deleteTest() {
 		daoClient.deleteClient(2L);
