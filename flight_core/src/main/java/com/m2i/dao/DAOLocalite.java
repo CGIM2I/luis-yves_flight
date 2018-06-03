@@ -12,7 +12,7 @@ import com.m2i.entity.vol.Localite;
 import com.m2i.entity.vol.Vol;
 @Component
 @Transactional
-public class DaoLocalite implements IDaoLocalite {
+public class DAOLocalite implements IDaoLocalite {
 	@PersistenceContext(unitName="myPersistenceUnitName")
 	private EntityManager entityManager;
 	@Override
