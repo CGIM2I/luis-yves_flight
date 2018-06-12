@@ -23,7 +23,7 @@ public class Reservation {
 	private Long numResa;
 	@OneToOne(fetch = FetchType.LAZY)
 	private Client client;
-	@ManyToMany(cascade=CascadeType.ALL)
+	@ManyToMany(cascade= {CascadeType.REFRESH,CascadeType.DETACH,CascadeType.MERGE})
 	private List<Personne> passagers;
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Vol> vols;
