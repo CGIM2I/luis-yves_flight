@@ -25,26 +25,19 @@ public class ServiceResaTest {
 	private IClientDAO daoClient;
 	@Test
 	public void testNouvelleRSA() {
-		String nom = "Dupont";
-		String prenom = "Dimitri";
-		String mail="dimitri@gmail.com";
+		String nom = "Turcato";
+		String prenom = "Martha";
+		String mail="martha@gmail.com";
 		String tel ="0123456789";
-		Adresse adresse = new Adresse("45 rue du Maine", "981247", "Lyon", "France");
+		Adresse adresse = new Adresse("28 rue du moulin", "981247", "Lyon", "France");
 		Client client = new Client(nom,prenom,mail,tel, adresse);
 		daoClient.createClient(client);
 		Reservation reservation = new Reservation();
 		reservation.setClient(client);
-//		Personne personne = new Personne();
-//		personne.setId(null);
-//		personne.setNom(nom);
-//		personne.setPrenom(prenom);
-//		personne.setEmail(mail);
-//		personne.setTelephone(tel);
-//		personne.setAdresse(adresse);
+		
 		List <Personne> listePersonnes = new ArrayList<Personne>();
 		listePersonnes.add(client);
 		reservation.setPassagers(listePersonnes);
-		System.out.println(reservation.toString());
 		daoRes.createResa(reservation);
 	}
 }

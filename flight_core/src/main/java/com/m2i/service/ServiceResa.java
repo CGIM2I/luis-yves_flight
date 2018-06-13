@@ -30,17 +30,7 @@ public class ServiceResa implements IServiceResa {
 	EntityManager entityManager;
 	@Override
 	public void nouvelleResa(Long numClient, Long numVol, List<Personne> listePassagers) {
-		Client client;
-		Vol vol;
-		List<Vol> listevols = new ArrayList<Vol>();
-		client = daoClient.readClient(numClient);
-		vol = daoVol.findVol(numVol);
-		listevols.add(vol);
-		Reservation reservation = new Reservation();
-		reservation.setClient(client);
-		reservation.setPassagers(listePassagers);
-		reservation.setVols(listevols);
-		daoRes.createResa(reservation);
+
 	}
 
 	@Override
@@ -50,9 +40,10 @@ public class ServiceResa implements IServiceResa {
 
 	@Override
 	public Reservation rechercherResaSelonClient(Long numClient) {
-		String qlString ="SELECT client FROM Client client INNER JOIN"
-				+ "Reservation reservation ON reservation.numResa";
-		return  null;
+		String pql ="SELECT reservation FROM Reservation reservation"
+				+ " WHERE reservation.client.id="+numClient;
+		Reservation reservation = entityManager.createQuery(pql, Reservation.class).getSingleResult();
+		return  reservation;
 	}
 
 	@Override

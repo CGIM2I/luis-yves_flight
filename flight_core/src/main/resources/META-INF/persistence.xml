@@ -12,9 +12,6 @@
 	      
 	        
 	         <class>com.m2i.entity.client.Client</class>
-	         
-	         
-	    
 	    <properties>
 	         
 	         <!-- maintenant dataSource H2 ou MySQL pris en charge par spring -->
