@@ -2,11 +2,13 @@ package com.m2i.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -21,9 +23,9 @@ public class Reservation {
 	private Long numResa;
 	@OneToOne(fetch = FetchType.LAZY)
 	private Client client;
-	@OneToMany
+	@ManyToMany(cascade= {CascadeType.REFRESH,CascadeType.DETACH,CascadeType.MERGE})
 	private List<Personne> passagers;
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
 	private List<Vol> vols;
 
 	public Long getNumResa() {
@@ -56,6 +58,11 @@ public class Reservation {
 
 	public void setVols(List<Vol> vols) {
 		this.vols = vols;
+	}
+
+	@Override
+	public String toString() {
+		return "Reservation [numResa=" + numResa + "]";
 	}
 
 }
