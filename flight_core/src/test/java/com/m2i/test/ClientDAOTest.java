@@ -43,4 +43,10 @@ public class ClientDAOTest {
 		Client c = daoClient.readClient(3L);
 		System.out.println(c);
 	}
+	
+	@Test
+	public void getClientByEmail() {
+		Client c = daoClient.findClientByEmail("ncockton6@economist.com");
+		System.out.println(c);
+	}
 }

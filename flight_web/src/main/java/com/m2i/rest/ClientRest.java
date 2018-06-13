@@ -49,16 +49,16 @@ public class ClientRest {
 	@RequestMapping(method = RequestMethod.POST)
 	ResponseEntity<Client> postClient(@RequestBody Client c) {
 		try {
-			Client clientExistant = dao.findDeviseByCode(c.getEmail());
-			if (deviseExistante == null)
-				dao.insertDevise(c);
+			Client clientExistant = dao.findClientByEmail(c.getEmail());
+			if (clientExistant == null)
+				dao.createClient(c);
 			else
-				dao.updateDevise(c);
+				dao.updateClient(c);
 			return new ResponseEntity<Client>(c, HttpStatus.OK);
 		} catch (Exception e) {
 			// e.printStackTrace();
 			System.err.println(e.getMessage());// ou logger....
-			return new ResponseEntity<Devise>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Client>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 

@@ -9,6 +9,7 @@ public interface IClientDAO {
 	public Client readClient(Long id);
 	public void updateClient(Client c);
 	public void deleteClient(Long id);
+	public Client findClientByEmail(String email);
 	
 	public List<Client> getClients();
 }

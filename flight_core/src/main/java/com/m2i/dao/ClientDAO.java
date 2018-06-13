@@ -48,4 +48,9 @@ public class ClientDAO implements IClientDAO {
 		
 	}
 
+	@Override
+	public Client findClientByEmail(String email) {		
+		return entityManager.createQuery("SELECT c FROM Client c WHERE c.email = :em",Client.class).setParameter("em", email).getSingleResult();
+	}
+
 }
