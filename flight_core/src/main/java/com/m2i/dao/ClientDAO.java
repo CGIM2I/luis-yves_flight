@@ -20,7 +20,7 @@ public class ClientDAO implements IClientDAO {
 
 	@Override
 	public void createClient(Client c) {
-		System.out.println("Méthode : createClient");
+
 		entityManager.persist(c);
 	}
 

@@ -1,6 +1,8 @@
 package com.m2i.test;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -15,6 +17,7 @@ import com.m2i.entity.Reservation;
 import com.m2i.entity.client.Adresse;
 import com.m2i.entity.client.Client;
 import com.m2i.entity.client.Personne;
+import com.m2i.service.IServiceResa;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="/beans.xml")
@@ -23,6 +26,9 @@ public class ServiceResaTest {
 	private IReservationDAO daoRes;
 	@Autowired
 	private IClientDAO daoClient;
+	@Autowired
+	private IServiceResa res;
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testNouvelleRSA() {
 		String nom = "Turcato";
@@ -34,10 +40,13 @@ public class ServiceResaTest {
 		daoClient.createClient(client);
 		Reservation reservation = new Reservation();
 		reservation.setClient(client);
-		
+
+		reservation.setComment("reservation de martha");
+		reservation.setDateResa(new Date());
 		List <Personne> listePersonnes = new ArrayList<Personne>();
 		listePersonnes.add(client);
 		reservation.setPassagers(listePersonnes);
 		daoRes.createResa(reservation);
+		System.out.println(res.rechercherResaSelonClient(101L).toString());
 	}
 }

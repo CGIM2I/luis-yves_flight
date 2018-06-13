@@ -32,6 +32,7 @@ public class Reservation {
 	@Column(name="comment")
 	private String comment;
 	
+	@Column(name="date_reservation")
 	@Temporal(TemporalType.DATE)
 	private Date dateResa;
 	
@@ -58,6 +59,35 @@ public class Reservation {
 			})
 	@JoinColumn(name="num")
 	private List<Vol> vols;
+
+	public Reservation(String comment, Date dateResa, Client client, List<Personne> passagers, List<Vol> vols) {
+		super();
+		this.comment = comment;
+		this.dateResa = dateResa;
+		this.client = client;
+		this.passagers = passagers;
+		this.vols = vols;
+	}
+
+	public Reservation() {
+		super();
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public Date getDateResa() {
+		return dateResa;
+	}
+
+	public void setDateResa(Date dateResa) {
+		this.dateResa = dateResa;
+	}
 
 	public Long getNumResa() {
 		return numResa;
@@ -93,7 +123,7 @@ public class Reservation {
 
 	@Override
 	public String toString() {
-		return "Reservation [numResa=" + numResa + "]";
+		return "Reservation [numResa=" + numResa + ", comment=" + comment + ", dateResa=" + dateResa + "]";
 	}
 
 }
