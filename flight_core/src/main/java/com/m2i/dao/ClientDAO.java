@@ -3,6 +3,7 @@ package com.m2i.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -50,7 +51,14 @@ public class ClientDAO implements IClientDAO {
 
 	@Override
 	public Client findClientByEmail(String email) {		
-		return entityManager.createQuery("SELECT c FROM Client c WHERE c.email = :em",Client.class).setParameter("em", email).getSingleResult();
+		try {
+			Client clientTrouve = entityManager.createQuery("SELECT c FROM Client c WHERE c.email = :em",Client.class)
+					.setParameter("em", email)
+					.getSingleResult();
+			return clientTrouve;
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 
 }

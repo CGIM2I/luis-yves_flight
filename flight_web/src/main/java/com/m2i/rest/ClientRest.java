@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.m2i.dao.IClientDAO;
-import com.m2i.entity.Devise;
 import com.m2i.entity.client.Client;
 
 @RestController
@@ -46,17 +45,21 @@ public class ClientRest {
 
 	}
 
+	// http://localhost:8080/flight_web/mvc/rest/client/
 	@RequestMapping(method = RequestMethod.POST)
 	ResponseEntity<Client> postClient(@RequestBody Client c) {
+		System.out.println(c);
 		try {
 			Client clientExistant = dao.findClientByEmail(c.getEmail());
-			if (clientExistant == null)
+			// System.out.println("ça s'est bien passé");
+			if (clientExistant == null) {
+				System.out.println("création d'un client");
 				dao.createClient(c);
-			else
+			} else
 				dao.updateClient(c);
 			return new ResponseEntity<Client>(c, HttpStatus.OK);
 		} catch (Exception e) {
-			// e.printStackTrace();
+			e.printStackTrace();
 			System.err.println(e.getMessage());// ou logger....
 			return new ResponseEntity<Client>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
