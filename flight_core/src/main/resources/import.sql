@@ -335,3 +335,6 @@ insert into Login (id, username, password, client_id) values (97, 'dchanning2o',
 insert into Login (id, username, password, client_id) values (98, 'hmacsorley2p', 'bBLwr80', 98);
 insert into Login (id, username, password, client_id) values (99, 'kpoveleye2q', 'QKnDisrh', 99);
 insert into Login (id, username, password, client_id) values (100, 'lfereday2r', '9Vgyq0m', 100);
+INSERT INTO `flight_db`.`reservation` (`numResa`, `comment`, `date_reservation`, `client_id`) VALUES ('1', 'reservation de Shanda', '2018-06-13', '55');
+INSERT INTO `flight_db`.`reservation` (`numResa`, `comment`, `date_reservation`, `client_id`) VALUES ('2', 'reservation de Shanda', '2018-06-13', '55');
+INSERT INTO `flight_db`.`reservation` (`numResa`, `comment`, `date_reservation`, `client_id`) VALUES ('2', 'reservation de Cchadie', '2018-06-13', '55');
